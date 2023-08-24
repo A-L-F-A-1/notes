@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <title>my notes</title>
+  </head>
+  <body>
+    <div id="app">
+      <main class="container text-center header">
+        <h1>new note</h1>
+        <div id="noteCreators"> 
+          <label for="">headline: </label>
+          <input type="text" placeholder="header" id="noteHeader" maxlength="15">
+          <label for=""> text content: </label>
+          <input type="text" placeholder="content" id="noteText" maxlength="80">  
+          <br>
+          <label for="time">Select a date:</label>
+          <input type="date" id="noteDate" name="time" >
+          <label for="note-bg" style="margin-left: 100px;" id="note-bg">select background:</label>
+          <select name="note-bg" id="noteBg">
+            <option value="navajowhite" >navajowhite</option>
+            <option value="lightblue">lightblue</option>
+            <option value="khaki">khaki</option>
+            <option value="lightgray">lightgray</option>
+            <option value="darkgray">darkgray</option>
+          </select>
+          <br>
+          <button id="createNote" class="m-2 btn btn-primary">submit</button>
+        </div>
+      </main>
+      <ul id="myNoteContainer"  class="container-fluid text-center m-3 w-auto p-3"></ul>
+      <details id="setting" class="btn btn-dark">
+        <summary>setting</summary>
+        <label for="search">you can search by date or note header</label>
+        <input type="search" id="search">
+        <br>
+        <button id="deleteAllNontes" class="btn btn-danger">delete all notes</button>
+        <input type="radio" id="abOrder" name="sort" value="AB" class="order"/>
+        <label for="AB">sort by AB order</label>
+        <input type="radio" id="dateOrder" name="sort" value="date" class="order"/>
+        <label for="date">sort by date</label>
+      </details>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
