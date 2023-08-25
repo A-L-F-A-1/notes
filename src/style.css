@@ -39,8 +39,8 @@ details {
 .note {
   transform: rotate(-6deg);
   display: inline-block;
-  width: 280px ;
-  height: 280px;
+  width: 275px ;
+  height: 275px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
   text-align: center;
@@ -102,11 +102,16 @@ details {
 
 /* Media query for phone */
 
-@media (max-width: 400px) {
+@media only screen and (min-width: 300px) and (max-width: 770px) {
 
 .header { 
-  width: 70%;
-  height: 70%;
+  height: 100%;
+  width: 100%;
+  font-size: larger;
+}
+
+h1{
+  font-size: 60px;
 }
 
   #noteHeader,
@@ -118,28 +123,17 @@ details {
   #noteBg {
     width: 100%;
   }
-  #note-bg{
-    margin-right: 100px;
+
+  details {
+    width: 60%;
+    position: absolute;
+    top: 1%;
+
+  }
+  
+  .note {
+    height: 300px;
+    width: 300px;
   }
 
-  #noteHeader,
-  #noteText {
-    font-size: 14px;
-    padding: 5px;
-  }
-}
-
-/* Media query for tablet */
-@media (min-width: 401px) and (max-width: 768px) {
-
-  #noteHeader,
-  #noteText {
-    width: 100%;
-  }
-
-  #noteHeader,
-  #noteText {
-    font-size: 16px;
-    padding: 10px;
-  }
 }
