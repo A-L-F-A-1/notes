@@ -98,6 +98,21 @@ if (deleteAllNontes)
     localStorage.clear();
   });
 
+  // remove note after refreshing the page
+if (myNoteContainer) {
+  myNoteContainer.addEventListener("click", (event) => {
+    const clickedElement = event.target as HTMLElement;
+    if (clickedElement.classList.contains("removeNote")) {
+      const noteToRemove = clickedElement.closest(".note");
+      if (noteToRemove && myNoteContainer.contains(noteToRemove)) {
+        myNoteContainer.removeChild(noteToRemove);
+        // Update localStorage when removing a note
+        updateLocalStorage();
+      }
+    }
+  });
+}
+
 // search for notes
 const searchInput: HTMLInputElement | null = document.getElementById(
   "search"
